@@ -1,7 +1,7 @@
 import edu.princeton.cs.algs4.*;
 import edu.princeton.cs.algs4.StdOut;
 
-public class Tour-1 {
+public class TourGroupOne {
     private Node first;
     private int n;
 
@@ -10,7 +10,7 @@ public class Tour-1 {
         private Node next;
     }
 
-    public Tour-1() {
+    public TourGroupOne() {
     }
 
     public void show() { // print the tour to standard output
