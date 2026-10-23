@@ -1,6 +1,6 @@
 import edu.princeton.cs.algs4.*;
 
-public class Tour {
+public class TourGroupTwo {
     private Node first;
 
     private class Node {
