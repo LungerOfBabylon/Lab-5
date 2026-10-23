@@ -77,9 +77,9 @@ public class TourGroupOne {
 
         Node newNode = new Node(); // the new node to be inserted
         newNode.p = p; // set the point of the new node to p
-        if (first.next == null) {
-            first = newNode; // if the list is empty, set the first node to the new node and return
+        if (first == null) {
             newNode.next = null;
+            first = newNode;
             n++;
             return;
         }
