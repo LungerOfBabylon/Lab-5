@@ -40,12 +40,11 @@ public class InOrderInsertion {
 			StdDraw.show(0);
 
 			// run smallest insertion heuristic
-			Tour tour = new Tour();
+			TourGroupOne tour = new TourGroupOne();
 			while (file.hasNextDouble()) {
 				double x = file.nextDouble();
 				double y = file.nextDouble();
 				Point p = new Point(x, y);
-				tour.insertInOrder(p);
 				if (delay > -1)
 				{
 					StdDraw.clear();

@@ -44,7 +44,7 @@ public class SmallestInsertion
 			StdDraw.show(0);
 
 			// run smallest insertion heuristic
-			Tour tour = new Tour();
+			TourGroupOne tour = new TourGroupOne();
 			while (file.hasNextDouble())
 			{
 				double x = file.nextDouble();

@@ -26,6 +26,7 @@ public class NearestInsertion
 	{
 		try
 		{
+            long start = System.currentTimeMillis();
 			String filename = args[0];
 			Scanner file = new Scanner(new File(filename));
 			// check for optional command-line argument that turns on animation
@@ -44,7 +45,7 @@ public class NearestInsertion
 			StdDraw.show(0);
 
 			// run smallest insertion heuristic
-			Tour tour = new Tour();
+			TourGroupOne tour = new TourGroupOne();
 			while (file.hasNextDouble()) 
 			{
 				double x = file.nextDouble();
@@ -68,6 +69,10 @@ public class NearestInsertion
 			// print tour to standard output
 			System.out.println("Tour distance = " + tour.distance());
 			tour.show();
+
+            double end = System.currentTimeMillis() - start;
+            System.out.println(end);
+            System.out.println(end/1000.0);
 		}
 		catch (FileNotFoundException e)
 		{

@@ -1,5 +1,3 @@
-import edu.princeton.cs.algs4.*;
-
 public class TourGroupTwo {
     private Node first;
 
@@ -8,7 +6,7 @@ public class TourGroupTwo {
         private Node next;
     }
 
-    public Tour() {
+    public TourGroupTwo() {
         first = null;
     }
 
