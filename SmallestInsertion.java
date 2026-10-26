@@ -24,6 +24,7 @@ public class SmallestInsertion
 
 	public static void main(String[] args)
 	{
+        long start = System.currentTimeMillis();
 		try
 		{
 			String filename = args[0];
@@ -75,6 +76,9 @@ public class SmallestInsertion
 		{
 			System.out.println("File not found.");
 		}
+        long end = System.currentTimeMillis();
+        
+        System.out.println("millis" + (end-start));
 	}
 
 }
