@@ -78,7 +78,7 @@ public class SmallestInsertion
 		}
         long end = System.currentTimeMillis();
         
-        System.out.println("millis" + (end-start));
+        System.out.println("millis " + (end-start));
 	}
 
 }
