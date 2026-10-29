@@ -3,30 +3,27 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /*************************************************************************
- *  YOU DO NOT NEED TO MODIFY THIS FILE
+ * YOU DO NOT NEED TO MODIFY THIS FILE
  *
- *  Compilation:  javac SmallestInsertion.java
- *  Execution:    java SmallestInsertion < file.txt
- *  Dependencies: Tour.java Point.java StdIn.java StdDraw.java
+ * Compilation: javac SmallestInsertion.java
+ * Execution: java SmallestInsertion < file.txt
+ * Dependencies: Tour.java Point.java StdIn.java StdDraw.java
  *
- *  Run smallest insertion heuristic for traveling salesperson problem
- *  and plot results.
+ * Run smallest insertion heuristic for traveling salesperson problem
+ * and plot results.
  *
- *  % java SmallestInsertion < tsp1000.txt
+ * % java SmallestInsertion < tsp1000.txt
  *
- *  Optional integer command-line argument specifies animation delay in ms
- *  % java SmallestInsertion 10 < tsp1000.txt
+ * Optional integer command-line argument specifies animation delay in ms
+ * % java SmallestInsertion 10 < tsp1000.txt
  *
  *************************************************************************/
 
-public class SmallestInsertion
-{
+public class SmallestInsertion {
 
-	public static void main(String[] args)
-	{
-        long start = System.currentTimeMillis();
-		try
-		{
+	public static void main(String[] args) {
+		long start = System.currentTimeMillis();
+		try {
 			String filename = args[0];
 			// check for optional command-line argument that turns on animation
 			int delay = -1;
@@ -46,16 +43,13 @@ public class SmallestInsertion
 
 			// run smallest insertion heuristic
 			TourGroupOne tour = new TourGroupOne();
-			while (file.hasNextDouble())
-			{
+			while (file.hasNextDouble()) {
 				double x = file.nextDouble();
 				double y = file.nextDouble();
 				Point p = new Point(x, y);
 				tour.insertSmallest(p);
 
-
-				if (delay > -1)
-				{
+				if (delay > -1) {
 					StdDraw.clear();
 					tour.draw();
 					StdDraw.text(100, 0, "" + tour.distance());
@@ -69,16 +63,14 @@ public class SmallestInsertion
 			StdDraw.show(0);
 
 			// print tour to standard output
-			System.out.println("Tour distance = " + tour.distance());
 			tour.show();
-		}
-		catch (FileNotFoundException e)
-		{
+			System.out.println("Tour distance = " + tour.distance());
+		} catch (FileNotFoundException e) {
 			System.out.println("File not found.");
 		}
-        long end = System.currentTimeMillis();
-        
-        System.out.println("millis " + (end-start));
+		double end = System.currentTimeMillis() - start;
+		System.out.println(end + "ms");
+		System.out.println(end / 1000.0 + "sec");
 	}
 
 }

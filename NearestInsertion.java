@@ -3,30 +3,27 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /*************************************************************************
- *  YOU DO NOT NEED TO MODIFY THIS FILE
+ * YOU DO NOT NEED TO MODIFY THIS FILE
  *
- *  Compilation:  javac NearestInsertion.java
- *  Execution:    java NearestInsertion < file.txt
- *  Dependencies: Tour.java Point.java StdIn.java StdDraw.java
+ * Compilation: javac NearestInsertion.java
+ * Execution: java NearestInsertion < file.txt
+ * Dependencies: Tour.java Point.java StdIn.java StdDraw.java
  *
- *  Run nearest neighbor insertion heuristic for traveling
- *  salesperson problem and plot results.
+ * Run nearest neighbor insertion heuristic for traveling
+ * salesperson problem and plot results.
  *
- *  % java NearestInsertion < tsp1000.txt
+ * % java NearestInsertion < tsp1000.txt
  *
- *  Optional integer command-line argument specifies animation delay in ms  
- *  % java NearestInsertion 10 < tsp1000.txt
- *  
+ * Optional integer command-line argument specifies animation delay in ms
+ * % java NearestInsertion 10 < tsp1000.txt
+ * 
  *************************************************************************/
 
-public class NearestInsertion 
-{
+public class NearestInsertion {
 
-	public static void main(String[] args) 
-	{
-		try
-		{
-            long start = System.currentTimeMillis();
+	public static void main(String[] args) {
+		try {
+			long start = System.currentTimeMillis();
 			String filename = args[0];
 			Scanner file = new Scanner(new File(filename));
 			// check for optional command-line argument that turns on animation
@@ -46,14 +43,12 @@ public class NearestInsertion
 
 			// run smallest insertion heuristic
 			TourGroupTwo tour = new TourGroupTwo();
-			while (file.hasNextDouble()) 
-			{
+			while (file.hasNextDouble()) {
 				double x = file.nextDouble();
 				double y = file.nextDouble();
 				Point p = new Point(x, y);
 				tour.insertNearest(p);
-				if (delay > -1)
-				{
+				if (delay > -1) {
 					StdDraw.clear();
 					tour.draw();
 					StdDraw.text(100, 0, "" + tour.distance());
@@ -67,15 +62,13 @@ public class NearestInsertion
 			StdDraw.show(0);
 
 			// print tour to standard output
-			System.out.println("Tour distance = " + tour.distance());
 			tour.show();
+			System.out.println("Tour distance = " + tour.distance());
 
-            double end = System.currentTimeMillis() - start;
-            System.out.println(end);
-            System.out.println(end/1000.0);
-		}
-		catch (FileNotFoundException e)
-		{
+			double end = System.currentTimeMillis() - start;
+			System.out.println(end + "ms");
+			System.out.println(end / 1000.0 + "sec");
+		} catch (FileNotFoundException e) {
 			System.out.println("File not found.");
 		}
 	}
